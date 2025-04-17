@@ -1,0 +1,24 @@
+.footer-nav {
+    background-color: #101820;
+    padding: 40px 20px;
+  }
+  .footer-nav h5 {
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .footer-nav a {
+    color: #bbb;
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+  }
+  .footer-nav a:hover {
+    color: #fff;
+  }
+  .footer-bottom {
+    background-color: #0d131a;
+    padding: 15px 20px;
+    text-align: center;
+    color: #bbb;
+    font-size: 0.9rem;
+  }
