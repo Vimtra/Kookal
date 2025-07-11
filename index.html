@@ -2,8 +2,67 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Plot Sales Website</title>
+  <title>Plots for Sale in Kotagiri – Premium Kotagiri Plots Near Ooty</title>
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'">
+  <meta name="description" content="Explore premium plots in Kotagiri—plots for sale in Kotagiri, Kotagiri plots, and scenic plots near Ooty. Land opportunities at 6,400 ft, just 30 km from Ooty.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/assets/images/favicon.png" type="image/png" />
+
+  <link rel="canonical" href="https://thewindgrove.com/" />
+
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Plots for Sale in Kotagiri | The Windgrove Hill Property" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://thewindgrove.com/assets/images/hero1.png" />
+  <meta property="og:url" content="https://thewindgrove.com/index.html" />
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Plots for Sale in Kotagiri | The Windgrove Hill Property" />
+  <meta name="twitter:description" content="Premium plots for sale in Kotagiri at The Windgrove—30 km from Ooty. Ideal for homestays, farmhouses & holiday homes. Scenic views & high return potential." />
+  <meta name="twitter:image" content="https://thewindgrove.com/assets/images/hero1.png" />
+  <meta name="twitter:site" content="@thewindgrove" />
+  <meta name="twitter:creator" content="@thewindgrove" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plot Sales in Kothagiri",
+    "name": "The Windgrove",
+    "url": "https://thewindgrove.com",
+    "logo": "https://thewindgrove.com/assets/Logo/Untitled-1.png",
+    "description": "Premium plots for sale in Kotagiri at The Windgrove—30 km from Ooty. Ideal for homestays, farmhouses & holiday homes. Scenic views & high return potential.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kukkal, Tamil Nadu",
+      "addressLocality": "Kotagiri",
+      "addressRegion": "Tamil Nadu",
+      "postalCode": "643217",
+      "addressCountry": "IN"
+    },
+    "telephone": "+91 98403 34456",
+    "email": "admin@thewindgrove.com",
+    "sameAs": [
+      "https://www.facebook.com/thewindgrove",
+      "https://www.instagram.com/thewindgrove",
+      "https://twitter.com/thewindgrove"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://thewindgrove.com/index.html"
+      }
+    ]
+  }
+  </script>
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
@@ -20,10 +79,10 @@
   <!-- Bootstrap icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-  <!-- AOS CSS -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <style>
+    
     body {
       font-family: 'Open Sans', sans-serif;
       background: linear-gradient(to right, #f0f4ff, #e3f2fd);
@@ -36,29 +95,47 @@
     .section-heading {
       font-weight: 700;
       font-size: 2.2rem;
-    } 
-
+    }
     /* Hero */
-    .hero-section {
+    .hero-carousel {
       height: 100vh;
-      position: relative;
+      width: 99.2vw;
       overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      perspective: 1px;
-      transform-style: preserve-3d;
-      background: black;
+    }
+    .carousel-caption h1{
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+    .carousel-caption p{
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-size: 25px;
+    }
+    .hero-slide {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      animation: zoomFade 5s ease-in-out forwards;
+    }
+    .slide1 { background-image: url('assets/images/hero1.png'); }
+    .slide2 { background-image: url('assets/images/hero2.png'); }
+    .slide3 { background-image: url('assets/images/hero3.png'); }
+
+    .carousel-caption {
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
     }
 
-    .hero-video {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 1;
+    /* Image zoom + fade animation */
+    @keyframes zoomFade {
+      0% {
+        transform: scale(1.1);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
     }
 
     .overlay {
@@ -151,158 +228,122 @@
       padding: 60px 20px;
     }
     .feature-box {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    .feature-box:hover {
-      transform: translateY(-5px);
-    }
-    .feature-icon {
-      font-size: 2rem;
-      color: #198754;
-    }
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
+}
+.feature-box:hover {
+  transform: translateY(-5px);
+}
+.feature-icon {
+  font-size: 2rem;
+  color: #198754;
+}
+.btn-enquire {
+  background-color: #198754;
+  color: white;
+  border-radius: 30px;
+  padding: 0.6rem 1.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+  box-shadow: 0 0 8px rgba(25, 135, 84, 0.6);
+}
 
-    .why-buy-section h5 {
-      font-weight: 600;
-      color: #198754;
+.btn-enquire:hover {
+  background-color: #146c43;
+  box-shadow: 0 0 15px rgba(25, 135, 84, 0.9);
+  transform: scale(1.05);
+  color: white;
+  text-decoration: none;
+}
+
+.btn-enquire:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 25px rgba(25, 135, 84, 1);
+  transition: transform 0.1s ease;
+}
+
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.hover-effect:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+    .why-buy-section {
+      background: url('assets/images/why-buy-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+      color: white;
     }
-    .why-buy-section ul {
-      list-style: disc;
-      padding-left: 20px;
+    .why-buy-section h2.section-heading {
+      color: white;
+      font-weight: 700;
+      margin-bottom: 3rem;
+    }
+    .innovative-card {
+      background: white;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      overflow: hidden;
+      cursor: pointer;
+      color: #363636;
+    }
+    .innovative-card:hover {
+      transform: translateY(-15px) rotate(-1deg);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+    .icon-circle {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #198754;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .card-accent {
+      position: absolute;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    .accent-top-left {
+      top: -30px;
+      left: -30px;
+      background: linear-gradient(135deg, #57c785, #2a7b9b);
+    }
+    .accent-bottom-right {
+      bottom: -30px;
+      right: -30px;
+      background: linear-gradient(135deg, #2a7b9b, #57c785);
+    }
+    h5 {
+      position: relative;
+      z-index: 1;
+      color: #198754;
+      font-weight: 600;
+    }
+    ul {
+      padding-left: 1.2rem;
       color: #555;
     }
-    .why-buy-section li {
-      margin-bottom: 8px;
-    }
-    .info-box {
-      position: relative;
-      background: white;
-      border-radius: 1rem;
-      padding: 30px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.05);
-      transition: transform 0.4s ease, border 0.4s ease;
-      overflow: hidden;
-      z-index: 1;
-    }
-
-    .info-box::before {
-      content: '';
-      position: absolute;
-      top: -2px;
-      left: -2px;
-      right: -2px;
-      bottom: -2px;
-      background: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-      z-index: -1;
-      opacity: 0;
-      transition: opacity 0.4s ease;
-      border-radius: 1rem;
-      background-size: 400% 400%;
-      animation: gradientShift 4s ease infinite;
-    }
-
-    .info-box:hover {
-      transform: scale(1.03);
-      box-shadow: 
-        0 0 20px rgba(255, 0, 204, 0.2), 
-        0 0 40px rgba(0, 255, 204, 0.15);
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
-      background-image: linear-gradient(90deg,rgba(42, 123, 155, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(237, 221, 83, 1) 100%);
-      transition: all 0.4s ease;
-    }
-
-
-    .info-box:hover::before {
-      opacity: 1;
-    }
-
-    @keyframes gradientShift {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-
-    .footer-nav {
-      background-color: #101820;
-      padding: 40px 20px;
-    }
-    .footer-nav h5 {
-      color: #fff;
-      margin-bottom: 20px;
-    }
-    .footer-nav a {
-      color: #bbb;
-      display: block;
-      margin-bottom: 10px;
-      text-decoration: none;
-    }
-    .footer-nav a:hover {
-      color: #fff;
-    }
-    .footer-bottom {
-      background-color: #0d131a;
-      padding: 15px 20px;
-      text-align: center;
-      color: #bbb;
-      font-size: 0.9rem;
-    }
-    .info-section {
-      padding: 60px 20px;
-    }
-    .feature-box {
-      background: white;
-      border-radius: 12px;
-      padding: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
-      transition: transform 0.3s ease;
-    }
-    .feature-box:hover {
-      transform: translateY(-5px);
-    }
-    .feature-icon {
-      font-size: 2rem;
-      color: #198754;
-    }
-
-    @media (max-width: 767px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero p {
-        font-size: 1rem;
-      }
-    }
-    a.nav-link {
-        position: relative;
-    }
-    a.nav-link::after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 2px;
-        left: 0;
-        bottom: 0;
-        background-color: #198754;
-        transition: width 0.3s;
-    }
-    a.nav-link:hover::after {
-        width: 100%;
-    }
-    .navbar-brand i {
-      font-size: 1.4rem;
-    }
-    .navbar-nav .nav-link {
-      font-weight: 500;
-      transition: 0.3s ease;
-    }
-    .navbar-nav .nav-link:hover {
-      color: #198754;
+    ul li {
+      margin-bottom: 0.5rem;
     }
   </style>
 </head>
@@ -310,11 +351,10 @@
 
   <div id="app">
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top bg-white shadow-sm py-2">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-2">
       <div class="container">
         <a class="navbar-brand fw-bold d-flex flex-column" href="index.html">
-          <div><i class="bi bi-tree-fill me-2 text-success"></i> Kookal Highlands</div>
-          <small class="text-muted" style="font-size: 0.7rem;">Hill View Plots in Kothagiri</small>
+          <img src="assets/Logo/Untitled-1.png" alt="logo" srcset="" class="img-fluid" style="max-width: 200px; height: 70px; ">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
           <span class="navbar-toggler-icon"></span>
@@ -322,285 +362,775 @@
         <div class="collapse navbar-collapse" id="navMenu">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="listings.html" class="nav-link">Plots</a></li>
-            <li class="nav-item"><a href="#why-choose" class="nav-link">Why Kookal</a></li>
-            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+            <!-- <li class="nav-item"><a href="listings.html" class="nav-link">Plots</a></li> -->
+            <li class="nav-item"><a href="whywindgrove.html" class="nav-link">Why Windgrove</a></li>
+            <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
+            <li class="nav-item"><a href="contact.html" class="nav-link">Contact Us</a></li>
           </ul>
         </div>
       </div>
     </nav>
     
 
-    <!-- Hero Section -->
-    <section class="hero-section position-relative">
-      <video autoplay muted loop playsinline class="hero-video">
-        <source src="./assets/videos/hero1.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-    
-      <div class="overlay"></div>
-    
-      <div class="hero-content glass-effect text-center">
-        <h1 data-aos="fade-up">Welcome to <span class="highlight">Kookal Highlands</span></h1>
-        <p class="typing-text">The Crown Jewel of Kothagiri</p>
-        <a href="listings.html" class="btn btn-hero mt-4">View Available Plots</a>
+<!-- Hero Carousel -->
+<section class="hero-carousel position-relative">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000" data-bs-pause="false">
+    <div class="carousel-inner">
+      <div class="carousel-item active hero-slide slide1">
+        <div class="carousel-caption d-flex align-items-center justify-content-center h-100">
+          <div class="text-center animate__animated animate__fadeInDown">
+            <h2 class="display-4 fw-bold text-white">Join The Windgrove Family</h2>
+            <p class="lead text-white" style="font-weight: bold;">Rejuvenate Your Soul</p>
+          </div>
+        </div>
       </div>
-    
-      <div class="scroll-down">
-        <i class="bi bi-chevron-double-down"></i>
+      <div class="carousel-item hero-slide slide2">
+        <div class="carousel-caption d-flex align-items-center justify-content-center h-100">
+          <div class="text-center animate__animated animate__zoomIn">
+            <h2 class="display-4 fw-bold text-white">Live the Legacy — At The Windgrove</h2>
+            <p class="lead text-white">Invest in Altitude. Harvest Tranquility.</p>
+          </div>
+        </div>
       </div>
-    </section>
-    
+      <div class="carousel-item hero-slide slide3">
+        <div class="carousel-caption d-flex align-items-center justify-content-center h-100">
+          <div class="text-center animate__animated animate__fadeInUp">
+            <h2 class="display-4 fw-bold text-white">Plots with Purpose</h2>
+            <p class="lead text-white">Agriculture. Retreat. Legacy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Featured Plots -->
-    <section class="py-5 bg-light">
-      <div class="container">
-      <h2 class="section-heading text-center mb-5">Featured Plots</h2>
-      <div class="row">
-        <!-- Plot Card 1 -->
-        <div class="col-md-4 mb-4" data-aos="fade-up">
-        <div class="card h-100 shadow-md hover-effect">
-          <img src="assets/images/plot1.jpeg" class="card-img-top" alt="Plot 1">
-          <div class="card-body">
-          <h5 class="card-title">Premium Corner Plot</h5>
-          <p class="card-text">2000 sq.ft. · ₹25 Lakhs · Near Airport</p>
-          <a href="plot.html" class="btn btn-outline-success">View Details</a>
-          </div>
-        </div>
-        </div>
-        <!-- Plot Card 2 -->
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="card h-100 shadow-md hover-effect">
-          <img src="assets/images/plot2.jpeg" class="card-img-top" alt="Plot 2">
-          <div class="card-body">
-          <h5 class="card-title">Green View Plot</h5>
-          <p class="card-text">1500 sq.ft. · ₹18 Lakhs · Gated Community</p>
-          <a href="plot.html" class="btn btn-outline-success">View Details</a>
-          </div>
-        </div>
-        </div>
-        <!-- Plot Card 3 -->
-        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-        <div class="card h-100 shadow-md hover-effect">
-          <img src="assets/images/plot3.jpeg" class="card-img-top" alt="Plot 3">
-          <div class="card-body">
-          <h5 class="card-title">Lake Facing Plot</h5>
-          <p class="card-text">1800 sq.ft. · ₹22 Lakhs · Scenic Location</p>
-          <a href="plot.html" class="btn btn-outline-success">View Details</a>
-          </div>
-        </div>
-        </div>
-      </div>
-      </div>
-    </section>
+<!-- New Section: Plots for Sale in Kotagiri -->
+<section class="py-5 bg-white">
+  <div class="container">
+    <h1 class="section-heading text-center mb-4" style="color: #146c43;">Plots for Sale in Kotagiri – Own Land at The Windgrove | Scenic Hill Station Property</h1>
+    <p class="lead text-center mb-3"></p>
+    <p class="text-center">Welcome to <a href="index.html" style="color: #146c43; text-decoration: underline;">The Windgrove</a> – a rare opportunity to own hill station plots in <a href="whywindgrove.html" style="color: #146c43; text-decoration: underline;">Tamil Nadu</a>, nestled high in the lush Western Ghats of <a href="about.html" style="color: #146c43; text-decoration: underline;">Kotagiri</a>, just 30 km from Ooty. Positioned at an altitude of 6,400 feet above sea level, The Windgrove offers 52 premium <a href="contact.html" style="color: #146c43; text-decoration: underline;">plots for sale in Kotagiri</a>, spread across 15 acres of unspoiled beauty. Whether you're dreaming of a holiday home, a luxury villa, an eco-resort, or an organic farm, this is where your vision takes root.</p>
+  </div>
+</section>
 
-    <style>
-      .hover-effect {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+<!-- Why Buy Section -->
+<section class="why-buy-section py-5 bg-light" style="background: url('assets/images/bg-features_1.png') no-repeat center center fixed; background-size: cover;">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5 text-white" data-aos="fade-up">🌄 Why Invest in Land at The Windgrove, Kotagiri?</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="innovative-card position-relative p-4 rounded-4 shadow-lg h-100" style="cursor:pointer;">
+          <div class="icon-circle bg-success text-white mb-3" style="background-color:#198754;">
+            <i class="bi bi-geo-alt-fill fs-2"></i>
+          </div>
+          <h5 class="mb-3">Prime Location in the Nilgiris</h5>
+          <p>Located near Uyilatti Falls and right on Kookal Thurai Main Road, <a href="https://youtu.be/UArgf3cAClo?si=USBSFlPcSHlZ6sAH" style="color: #198754; text-decoration: underline;">The Windgrove</a> offers unmatched connectivity, while still preserving privacy and peace.</p>
+          <div class="card-accent accent-top-left"></div>
+          <div class="card-accent accent-bottom-right"></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="innovative-card position-relative p-4 rounded-4 shadow-lg h-100" style="cursor:pointer;">
+          <div class="icon-circle bg-success text-white mb-3" style="background-color:#198754;">
+            <i class="bi bi-cloud-sun-fill fs-2"></i>
+          </div>
+          <h5 class="mb-3 text-success">High Altitude, Low Pollution</h5>
+          <p>Unlike crowded cities, <a href="about.html" style="color: #198754; text-decoration: underline;">Kotagiri</a> offers clean air, cool weather year-round, and a tranquil natural environment – making it ideal for wellness retreats, farm stays, or vacation homes.</p>
+          <div class="card-accent accent-top-left"></div>
+          <div class="card-accent accent-bottom-right"></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
+        <div class="innovative-card position-relative p-4 rounded-4 shadow-lg h-100" style="cursor:pointer;">
+          <div class="icon-circle bg-success text-white mb-3" style="background-color:#198754;">
+            <i class="bi bi-patch-check-fill fs-2"></i>
+          </div>
+          <h5 class="mb-3 text-success">Limited & Exclusive Plots</h5>
+          <p>With just 52 scenic mountain plots, each parcel is surrounded by fertile farmland and panoramic views – a perfect blend of investment security and natural beauty. See our <a href="https://youtu.be/LVThZQwIYHk?si=8EYxhP93iQd9CT6R" style="color: #198754; text-decoration: underline;">available plots</a>.</p>
+          <div class="card-accent accent-top-left"></div>
+          <div class="card-accent accent-bottom-right"></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
+        <div class="innovative-card position-relative p-4 rounded-4 shadow-lg h-100" style="cursor:pointer;">
+          <div class="icon-circle bg-success text-white mb-3" style="background-color:#198754;">
+            <i class="bi bi-flower1 fs-2"></i>
+          </div>
+          <h5 class="mb-3 text-success">Ideal for Organic Farming or Boutique Retreats</h5>
+          <p>Thanks to rich red soil and reliable water sources, this is a haven for organic farm land in <a href="about.html" style="color: #198754; text-decoration: underline;">Kotagiri</a>. From flowering plants to fruit orchards, grow your dream harvest in peace.</p>
+          <div class="card-accent accent-top-left"></div>
+          <div class="card-accent accent-bottom-right"></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
+        <div class="innovative-card position-relative p-4 rounded-4 shadow-lg h-100" style="cursor:pointer;">
+          <div class="icon-circle bg-success text-white mb-3" style="background-color:#198754;">
+            <i class="bi bi-house-door-fill fs-2"></i>
+          </div>
+          <h5 class="mb-3 text-success">Types of Properties You Can Build</h5>
+          <ul>
+            <li><a href="about.html" style="color: #198754; text-decoration: underline;">Holiday Homes</a> or Vacation Villas – Escape to nature any time of year</li>
+            <li>Organic Farms or Agro Tourism Spaces – Ideal for sustainable living</li>
+            <li>Luxury Homestays or Eco-Resorts – Tap into growing tourism demand</li>
+            <li>Retirement Villas or Weekend Getaways – Enjoy your golden years in serenity</li>
+          </ul>
+          <div class="card-accent accent-top-left"></div>
+          <div class="card-accent accent-bottom-right"></div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
+        <div class="innovative-card position-relative p-4 rounded-4 shadow-lg h-100" style="cursor:pointer;">
+          <div class="icon-circle bg-success text-white mb-3" style="background-color:#198754;">
+            <i class="bi bi-geo-alt fs-2"></i>
+          </div>
+          <h5 class="mb-3 text-success">Location Highlights</h5>
+          <ul>
+            <li>Just 2.7 km from Uyilatti Falls</li>
+            <li>30 km from Ooty and well-connected to Coonoor</li>
+            <li>Surrounded by established farmlands, reducing overdevelopment risk</li>
+            <li>Direct access from <a href="whywindgrove.html" style="color: #198754; text-decoration: underline;">Kookal Thurai Main Road</a></li>
+          </ul>
+          <div class="card-accent accent-top-left"></div>
+          <div class="card-accent accent-bottom-right"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Enquiry Modal -->
+    <div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enquiryModalLabel">Enquire About: {{ selectedPlot ? selectedPlot.title : '' }}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form v-if="!formSubmitted" @submit.prevent="submitEnquiry" action="https://formspree.io/f/mvgavqdw" method="POST">
+              <input type="hidden" name="Plot Title" :value="selectedPlot?.title" />
+              <div class="mb-3">
+                <label for="name" class="form-label">Full Name</label>
+                <input type="text" id="name" name="name" v-model="customer.name" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" id="email" name="email" v-model="customer.email" class="form-control" required />
+              </div>
+              <div class="mb-3">
+                <label for="phone" class="form-label">Phone Number</label>
+                <input type="text" id="phone" name="phone" v-model="customer.phone" class="form-control" required />
+              </div>
+              <button type="submit" class="btn btn-primary w-100">Submit Enquiry</button>
+            </form>
+
+            <div v-else class="text-center mt-4">
+              <div class="checkmark">
+                <svg class="tick-icon" viewBox="0 0 52 52">
+                  <path d="M14 27l7 7 17-17" fill="none" stroke="#28a745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <p class="mt-3 text-success">Your enquiry has been submitted!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<style>
+  #secure-spot-section {
+    background-color: #ffffff;
+  }
+  .glow-text {
+    color: #198754;
+    text-shadow:
+      0 0 5px #198754,
+      0 0 10px #198754,
+      0 0 20px #198754,
+      0 0 40px #66ffcc;
+  }
+  .animated-list-item {
+    position: relative;
+    animation: floatUpDown 4s ease-in-out infinite alternate;
+  }
+  .animated-list-item:nth-child(1) {
+    animation-delay: 0s;
+  }
+  .animated-list-item:nth-child(2) {
+    animation-delay: 1s;
+  }
+  .animated-list-item:nth-child(3) {
+    animation-delay: 2s;
+  }
+  .animated-list-item:nth-child(4) {
+    animation-delay: 3s;
+  }
+  .animated-list-item:nth-child(5) {
+    animation-delay: 4s;
+  }
+  @keyframes floatUpDown {
+    0% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-10px);
+      opacity: 0.8;
+    }
+  }
+  .animated-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 0;
+  }
+  .animated-shapes .shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.15;
+    background: #198754;
+    animation-timing-function: linear;
+  }
+  .animated-shapes .shape1 {
+    width: 120px;
+    height: 120px;
+    top: 10%;
+    left: 15%;
+    animation: floatUpDown 6s infinite alternate;
+  }
+  .animated-shapes .shape2 {
+    width: 80px;
+    height: 80px;
+    top: 40%;
+    left: 70%;
+    animation: floatUpDown 8s infinite alternate;
+    animation-delay: 2s;
+  }
+  .animated-shapes .shape3 {
+    width: 100px;
+    height: 100px;
+    top: 70%;
+    left: 30%;
+    animation: floatUpDown 7s infinite alternate;
+    animation-delay: 4s;
+  }
+  .animated-shapes .shape4 {
+    width: 60px;
+    height: 60px;
+    top: 80%;
+    left: 80%;
+    animation: floatUpDown 5s infinite alternate;
+    animation-delay: 1s;
+  }
+  .animated-shapes-new {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 200px;
+    height: 200px;
+    pointer-events: none;
+    overflow: visible;
+    z-index: 0;
+  }
+  .animated-shapes-new .shape-new {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.12;
+    background: #66ffcc;
+    animation-timing-function: ease-in-out;
+  }
+  .animated-shapes-new .shape1-new {
+    width: 80px;
+    height: 80px;
+    top: 0;
+    left: 0;
+    animation: floatUpDownNew 5s infinite alternate;
+  }
+  .animated-shapes-new .shape2-new {
+    width: 50px;
+    height: 50px;
+    top: 50px;
+    left: 120px;
+    animation: floatUpDownNew 6s infinite alternate;
+    animation-delay: 2s;
+  }
+  .animated-shapes-new .shape3-new {
+    width: 60px;
+    height: 60px;
+    top: 130px;
+    left: 60px;
+    animation: floatUpDownNew 7s infinite alternate;
+    animation-delay: 4s;
+  }
+  @keyframes floatUpDownNew {
+    0% {
+      transform: translateY(0);
+      opacity: 0.12;
+    }
+    100% {
+      transform: translateY(-15px);
+      opacity: 0.3;
+    }
+  }
+</style>
+
+<!-- Why now is the best time -->
+<section id="why-now-section" class="d-flex justify-content-center align-items-center text-center" style="background: #1e7e34; border-radius: 12px; min-height: 350px; padding: 3rem 2rem; color: white;">
+  <div class="container">
+    <h2 class="section-heading mb-3" style="font-weight: 700; font-size: 2.5rem; margin-bottom: 1rem;">Why Now is the Best Time to Buy Land in Kotagiri?</h2>
+    <p class="fs-5 mb-4" style="max-width: 600px; margin: 0 auto 2rem auto; color: #d4edda;">In 2025, Kotagiri real estate is rapidly gaining traction as a smart investment alternative to Ooty. While Ooty is overcrowded and overbuilt, Kotagiri offers affordable, appreciating land in peaceful surroundings.</p>
+    <ul class="list-unstyled fs-5" style="max-width: 600px; margin: 0 auto; color: #c3e6cb; text-align: left;">
+      <li v-for="(item, index) in reasons" :key="index" class="mb-3 d-flex align-items-center" style="cursor: pointer;" @mouseover="setHoverIndex(index)" @mouseleave="clearHoverIndex">
+        <i class="bi bi-check-circle-fill text-light me-3 fs-4" :class="{'text-info': hoverIndex === index, 'text-light': hoverIndex !== index}" style="transition: color 0.3s;"></i>
+        <span :class="{'text-info': hoverIndex === index, 'text-light': hoverIndex !== index}" style="transition: color 0.3s;">{{ item }}</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- <script>
+new Vue({
+  el: '#app',
+  data: {
+    plots: [
+      { id: 1, title: 'Premium Corner Plot', location: 'Airport Road', size: 2000, price: 2500000, image: 'assets/images/plot1.jpeg' },
+      { id: 2, title: 'Green View Plot', location: 'Gated Community', size: 1500, price: 1800000, image: 'assets/images/plot2.jpeg' },
+      { id: 3, title: 'Lake Facing Plot', location: 'Scenic Location', size: 1800, price: 2200000, image: 'assets/images/plot3.jpeg' }
+    ],
+    selectedPlot: null,
+    customer: {
+      name: '',
+      email: '',
+      phone: ''
+    },
+    formSubmitted: false,
+    reasons: [
+      'Land value in Kotagiri is projected to grow steadily over the next 5 years',
+      'Plots in scenic mountain locations are becoming increasingly rare',
+      'Ideal for long-term investors, second home buyers, and eco-entrepreneurs'
+    ],
+    hoverIndex: null
+  },
+  methods: {
+    openModal(plot) {
+      this.selectedPlot = plot;
+      this.customer = { name: '', email: '', phone: '' };
+      this.formSubmitted = false;
+      const myModal = new bootstrap.Modal(document.getElementById('enquiryModal'));
+      myModal.show();
+    },
+    async submitEnquiry() {
+      const form = document.querySelector('#enquiryModal form');
+      const formData = new FormData(form);
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          body: formData,
+          headers: { Accept: 'application/json' }
+        });
+        if (response.ok) {
+          this.formSubmitted = true;
+          setTimeout(() => {
+            const modalInstance = bootstrap.Modal.getInstance(document.getElementById('enquiryModal'));
+            modalInstance.hide();
+          }, 2000);
+        } else {
+          alert('Submission failed. Please try again.');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Something went wrong.');
       }
-      .hover-effect:hover {
-      transform: scale(1.05);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-      }
-    </style>
-    
-    <section class="why-buy-section py-5 bg-light">
-      <div class="container">
-        <h2 class="text-center mb-5" data-aos="fade-up">Why Buy Plots In Kothagiri?</h2>
-        <div class="row g-4">
-          <div class="col-md-6" data-aos="fade-right">
-            <div class="info-box shadow-sm p-4 h-100 rounded-4 bg-white">
-              <h5>🏞 Location Advantages</h5>
-              <ul class="mb-0">
-                <li>High Altitude – Cooler weather all year round</li>
-                <li>Scenic Views – Hills, valleys, and lush greenery</li>
-                <li>Pollution-Free & Peaceful – Ideal for nature lovers</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-left">
-            <div class="info-box shadow-sm p-4 h-100 rounded-4 bg-white">
-              <h5>🌿 Agriculture & Eco Farming</h5>
-              <ul class="mb-0">
-                <li>Fertile Soil – Ideal for organic farming</li>
-                <li>Abundant Water Resources – Natural springs nearby</li>
-                <li>Ideal Climate – Cool temperatures & balanced rainfall</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-right">
-            <div class="info-box shadow-sm p-4 h-100 rounded-4 bg-white">
-              <h5>💰 Investment Benefits</h5>
-              <ul class="mb-0">
-                <li>Rising Property Values – Hill land is climbing fast</li>
-                <li>Low Maintenance – Easier than city real estate</li>
-                <li>High Demand – Among retirees & eco-developers</li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-md-6" data-aos="fade-left">
-            <div class="info-box shadow-sm p-4 h-100 rounded-4 bg-white">
-              <h5>🏡 Usage Versatility</h5>
-              <ul class="mb-0">
-                <li>Farmhouse or Weekend Home – Your hill retreat</li>
-                <li>Homestay/Resort – Leverage eco-tourism boom</li>
-                <li>Land Banking – Hold & sell for a premium</li>
-              </ul>
-            </div>
-          </div>
+    },
+    setHoverIndex(index) {
+      this.hoverIndex = index;
+    },
+    clearHoverIndex() {
+      this.hoverIndex = null;
+    }
+  },
+  mounted() {
+    AOS.init();
+    AOS.refresh();
+  },
+  beforeDestroy() {
+    AOS.refresh();
+  }
+});
+</script> -->
+<style>
+#secure-spot-new-section {
+  background: linear-gradient(135deg, #d4f8e8, #a0d8a0);
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+  overflow: hidden;
+}
+
+.secure-spot-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #14532d;
+  text-shadow: 0 0 8px rgba(0, 100, 0, 0.1);
+}
+
+.secure-spot-lead {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e3a2f;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.secure-spot-sublead {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #3a3a3a;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.secure-spot-list {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  gap: 1rem;
+  row-gap: 1.5rem;
+  justify-content: center;
+}
+
+.secure-spot-list-item {
+  background: white;
+  border-radius: 12px;
+  padding: 0.75rem 1.25rem;
+  margin: 0.5rem;
+  min-width: 280px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.secure-spot-list-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.secure-spot-list-item i {
+  margin-right: 0.75rem;
+  color: #198754;
+}
+</style>
+<!-- Secure Your Spot -->
+<section id="secure-spot-new-section" class="py-5 position-relative overflow-hidden" aria-labelledby="secure-spot-heading" role="region" data-aos="fade-up" style="background: linear-gradient(135deg, #c8f7d4, #8bc34a); border-radius: 20px; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15); margin: 3rem 0;">
+  <div class="container py-5">
+    <h2 id="secure-spot-heading" class="section-heading text-center mb-5 secure-spot-heading" data-aos="fade-down" data-aos-duration="1200" style="font-size: 2.8rem; color: #2e7d32;">Secure Your Spot in Nature’s Paradise</h2>
+    <p class="lead text-center mb-4 secure-spot-lead" data-aos="fade-up" data-aos-delay="300" data-aos-duration="1200" style="font-size: 1.3rem; color: #1b5e20; max-width: 700px; margin-left: auto; margin-right: auto;">The Windgrove is more than a plot — it’s a place where the mountains whisper, the waterfalls call, and your future flourishes.</p>
+    <p class="text-center mb-5 secure-spot-sublead" data-aos="fade-up" data-aos-delay="600" data-aos-duration="1200" style="font-size: 1.15rem; color: #2c3e50; max-width: 700px; margin-left: auto; margin-right: auto;">Whether you’re looking to buy land in the Nilgiris, build a holiday retreat, or invest in scenic mountain plots in India, The Windgrove offers:</p>
+    <ul class="list-unstyled fs-5 mx-auto d-flex flex-wrap justify-content-center gap-4 secure-spot-list" role="list" aria-label="Benefits of investing at The Windgrove">
+      <li class="d-flex align-items-center list-item-card secure-spot-list-item" data-aos="fade-up" data-aos-delay="150" tabindex="0" style="background: white; border-radius: 15px; padding: 1rem 1.5rem; min-width: 280px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
+        <i class="bi bi-check-circle-fill text-success fs-3 me-3" aria-hidden="true"></i><span>Peaceful surroundings <br>Experience the calm embrace of nature in a truly peaceful surrounding.
+          Where every breath is serene and every view soothes the soul.</span>
+      </li>
+      <li class="d-flex align-items-center list-item-card secure-spot-list-item" data-aos="fade-up" data-aos-delay="300" tabindex="0" style="background: white; border-radius: 15px; padding: 1rem 1.5rem; min-width: 280px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
+        <i class="bi bi-check-circle-fill text-success fs-3 me-3" aria-hidden="true"></i><span>Cool climate year-round <br>Enjoy a refreshing cool climate all year long, perfect for comfort and relaxation.
+          Where every season feels like a gentle breeze on a hilltop retreat.</span>
+      </li>
+      <li class="d-flex align-items-center list-item-card secure-spot-list-item" data-aos="fade-up" data-aos-delay="450" tabindex="0" style="background: white; border-radius: 15px; padding: 1rem 1.5rem; min-width: 280px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
+        <i class="bi bi-check-circle-fill text-success fs-3 me-3" aria-hidden="true"></i><span>Fertile soil and water availability <br>Blessed with fertile soil and abundant water, the land nurtures life effortlessly.
+          Ideal for lush gardens, thriving farms, or your green dream come true.</span>
+      </li>
+      <li class="d-flex align-items-center list-item-card secure-spot-list-item" data-aos="fade-up" data-aos-delay="600" tabindex="0" style="background: white; border-radius: 15px; padding: 1rem 1.5rem; min-width: 280px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
+        <i class="bi bi-check-circle-fill text-success fs-3 me-3" aria-hidden="true"></i><span>Clear road access <br>Easily accessible with well-laid roads that connect you seamlessly to every destination.
+          Travel without hassle and enjoy smooth journeys to and from your haven.</span>
+      </li>
+      <li class="d-flex align-items-center list-item-card secure-spot-list-item" data-aos="fade-up" data-aos-delay="750" tabindex="0" style="background: white; border-radius: 15px; padding: 1rem 1.5rem; min-width: 280px; box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1); transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: default;">
+        <i class="bi bi-check-circle-fill text-success fs-3 me-3" aria-hidden="true"></i><span>High potential rental/ROI value <br>Unlock strong rental yields and impressive ROI in a rapidly growing location.
+          An investment that offers both peace of mind and profitable returns.</span>
+      </li>
+    </ul>
+  </div>
+
+  <div class="animated-shapes-new" aria-hidden="true">
+    <span class="shape-new shape1-new"></span>
+    <span class="shape-new shape2-new"></span>
+    <span class="shape-new shape3-new"></span>
+  </div>
+</section>
+
+<style>
+  #secure-spot-new-section {
+    background: linear-gradient(135deg, #c8f7d4, #8bc34a);
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    margin: 3rem 0;
+  }
+  .secure-spot-heading {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #2e7d32;
+    text-shadow: 0 0 8px rgba(0, 100, 0, 0.1);
+  }
+  .secure-spot-lead {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #1b5e20;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .secure-spot-sublead {
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: #2c3e50;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .secure-spot-list {
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 1.5rem;
+    row-gap: 2rem;
+    justify-content: center;
+  }
+  .secure-spot-list-item {
+    background: white;
+    border-radius: 15px;
+    padding: 1rem 1.5rem;
+    min-width: 280px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: default;
+  }
+  .secure-spot-list-item:hover,
+  .secure-spot-list-item:focus {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
+  .secure-spot-list-item i {
+    margin-right: 1rem;
+    color: #388e3c;
+  }
+</style>
+<!-- Featured Plots
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="section-heading text-center mb-5">Featured Plots</h2>
+    <div class="row g-4">
+      <div class="col-md-4" data-aos="fade-up">
+        <div class="feature-box hover-effect">
+          <img src="assets/images/1.png" alt="Premium Corner Plot" class="img-fluid rounded mb-3" />
+          <h5>Premium Corner Plot</h5>
+          <p>2000 sq.ft. · ₹25 Lakhs · Near Airport</p>
+          <button class="btn-enquire" @click="openModal(plots[0])">Enquire Now</button>
         </div>
       </div>
-    </section>
-    
-    <!-- Why Choose Us -->
-    <section class="py-5"> 
-      <div class="container">
-        <h2 class="section-heading text-center mb-5">Why Choose <span class="text-success">Kookal Highlands</span>?</h2>
-        <div class="row text-center">
-    
-          <!-- Feature 1: Location Advantage -->
-          <div class="col-md-4 mb-4" data-aos="fade-up">
-            <i class="bi bi-patch-check-fill fs-1 text-success mb-3"></i>
-            <h5>Verified Plots</h5>
-            <p class="text-muted">All our listings are legally verified with clear titles.</p>
-          </div>
-    
-          <!-- Feature 2: Agriculture & Eco Farming -->
-          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <i class="bi bi-flower1 fs-1 text-success mb-3"></i>
-            <h5>Agriculture & Eco Farming</h5>
-            <p class="text-muted">Fertile land and natural water sources – ideal for organic farming or orchards.</p>
-          </div>
-    
-          <!-- Feature 3: Investment Benefits -->
-          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-piggy-bank fs-1 text-success mb-3"></i>
-            <h5>Investment Benefits</h5>
-            <p class="text-muted">High ROI through Airbnb or resale – appreciate value and passive income.</p>
-          </div>
-    
-          <!-- Feature 4: Usage Versatility -->
-          <div class="col-md-4 mb-4" data-aos="fade-up">
-            <i class="bi bi-house-heart fs-1 text-success mb-3"></i>
-            <h5>Usage Versatility</h5>
-            <p class="text-muted">Farmhouse, retreat, resort or land banking – build your dream your way.</p>
-          </div>
-    
-          <!-- Feature 5: Tourism & Wellness Potential -->
-          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
-            <i class="bi bi-briefcase fs-1 text-success mb-3"></i>
-            <h5>Tourism & Wellness</h5>
-            <p class="text-muted">Booming eco-tourism & health retreats make this a top destination.</p>
-          </div>
-    
-          <!-- Feature 6: Legal & Infrastructure Support -->
-          <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
-            <i class="bi bi-shield-check fs-1 text-success mb-3"></i>
-            <h5>Legally Secured</h5>
-            <p class="text-muted">DTCP approved layout with proper documentation & infrastructure.</p>
-          </div>
-    
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+        <div class="feature-box hover-effect">
+          <img src="assets/images/2.png" alt="Green View Plot" class="img-fluid rounded mb-3" />
+          <h5>Green View Plot</h5>
+          <p>1500 sq.ft. · ₹18 Lakhs · Gated Community</p>
+          <button class="btn-enquire" @click="openModal(plots[1])">Enquire Now</button>
         </div>
       </div>
-    </section>
-    
-    <!-- Video Section -->
-    <section class="video-section py-5 bg-dark text-white">
-      <div class="container">
-        <h2 class="section-heading text-center mb-4">Explore Our Locations</h2>
-        <div class="ratio ratio-16x9">
-          <video autoplay muted loop playsinline>
-            <source src="./assets/videos/Kothagiri_3.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
+      <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+        <div class="feature-box hover-effect">
+          <img src="assets/images/3.png" alt="Lake Facing Plot" class="img-fluid rounded mb-3" />
+          <h5>Lake Facing Plot</h5>
+          <p>1800 sq.ft. · ₹22 Lakhs · Scenic Location</p>
+          <button class="btn-enquire" @click="openModal(plots[2])">Enquire Now</button>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>     -->
+
+
+
+<!-- Video Section -->
+<section class="video-section py-5 bg-dark text-white">
+  <div class="container">
+    <h2 class="section-heading text-center mb-4">Explore Our Locations</h2>
+    <div class="ratio ratio-16x9">
+      <iframe 
+        src="https://www.youtube.com/embed/O9gmZa111uY" 
+        title="Explore Our Locations"
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
     <!-- Footer -->
     <footer class="footer-nav">
         <div class="container">
           <div class="row">
             <div class="col-md-4 mb-4">
-              <h5>PlotBrand</h5>
-              <p>Your trusted partner for buying premium plots with transparency and ease.</p>
+              <img src="assets/Logo/Untitled-1.png" alt="logo" srcset="" class="img-fluid" style="max-width: 200px; height: 70px; ">
+              <p>The Windgrove offers handpicked land opportunities in pristine hill stations, blending natural beauty with high growth potential. Built on trust, transparency, and long-term vision, we help you invest not just in land — but in a lifestyle.</p>
             </div>
             <div class="col-md-2 mb-4">
               <h5>Quick Links</h5>
               <a href="index.html">Home</a>
-              <a href="listings.html">Plots</a>
-              <a href="about.html">About</a>
-              <a href="contact.html">Contact</a>
+              <!-- <a href="listings.html">Plots</a> -->
+              <a href="whywindgrove.html">Why Windgrove</a>
+              <a href="about.html">About Us</a>
+              <a href="contact.html">Contact Us</a>
             </div>
             <div class="col-md-3 mb-4">
               <h5>Explore</h5>
-              <a href="#">Pricing Plans</a>
-              <a href="#">FAQ</a>
-              <a href="#">Testimonials</a>
-              <a href="#">Blog</a>
+              <!-- <a href="#">Pricing Plans</a> -->
+              <!-- <a href="#">FAQ</a> -->
+              <!-- <a href="#">Testimonials</a> -->
+              <a href="blog.html">Blog</a>
+              <a href="plots-for-sales-in-kotagiri.html">Plots for Sale in Kotagiri</a>
+              <a href="property-for-sale-in-kotagiri.html">Property for Sale in Kotagiri</a>
+              <a href="kotagiri-plot-for-sale.html">Kotagiri Plot for Sale</a>
+              <a href="land-for-sale-in-kotagiri.html">Land for Sale in Kotagiri</a>
+              <a href="residential-plot-for-sale-in-kotagiri.html">Residential Plot for Sale in Kotagiri</a>
             </div>
-            <div class="col-md-3 mb-4">
+            <div class="col-md-2 mb-4">
               <h5>Contact Us</h5>
-              <p>Email: info@plotbrand.com</p>
-              <p>Phone: +91 98765 43210</p>
-              <p>Location: Bangalore, India</p>
+              <p>Email: admin@thewindgrove.com</p>
+              <!-- <p>Phone: +91 98403 34456</p> -->
+              <p>Location: Kukkal, Tamil Nadu</p>
             </div>
           </div>
         </div>
       </footer>
-  
-      <!-- Footer Copyright -->
-      <div class="footer-bottom">
-        &copy; 2025 PlotBrand. All Rights Reserved.
+
+    <!-- Footer Copyright -->
+    <div class="footer-bottom">
+      &copy; 2025 The Windgrove. All Rights Reserved.
+    </div>
+  </div>
+
+<!-- Scripts -->
+<script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    new Vue({
+      el: '#app',
+      data: {
+        plots: [
+          { id: 1, title: 'Premium Corner Plot', location: 'Airport Road', size: 2000, price: 2500000, image: 'assets/images/plot1.jpeg' },
+          { id: 2, title: 'Green View Plot', location: 'Gated Community', size: 1500, price: 1800000, image: 'assets/images/plot2.jpeg' },
+          { id: 3, title: 'Lake Facing Plot', location: 'Scenic Location', size: 1800, price: 2200000, image: 'assets/images/plot3.jpeg' }
+        ],
+        selectedPlot: null,
+        customer: {
+          name: '',
+          email: '',
+          phone: ''
+        },
+        formSubmitted: false,
+        reasons: [
+          'Land value in Kotagiri is projected to grow steadily over the next 5 years',
+          'Plots in scenic mountain locations are becoming increasingly rare',
+          'Ideal for long-term investors, second home buyers, and eco-entrepreneurs'
+        ],
+        hoverIndex: null
+      },
+      methods: {
+        openModal(plot) {
+          this.selectedPlot = plot;
+          this.customer = { name: '', email: '', phone: '' };
+          this.formSubmitted = false;
+          const myModal = new bootstrap.Modal(document.getElementById('enquiryModal'));
+          myModal.show();
+        },
+        async submitEnquiry() {
+          const form = document.querySelector('#enquiryModal form');
+          const formData = new FormData(form);
+          try {
+            const response = await fetch(form.action, {
+              method: 'POST',
+              body: formData,
+              headers: { Accept: 'application/json' }
+            });
+            if (response.ok) {
+              this.formSubmitted = true;
+              setTimeout(() => {
+                const modalInstance = bootstrap.Modal.getInstance(document.getElementById('enquiryModal'));
+                modalInstance.hide();
+              }, 2000);
+            } else {
+              alert('Submission failed. Please try again.');
+            }
+          } catch (error) {
+            console.error('Error:', error);
+            alert('Something went wrong.');
+          }
+        },
+        setHoverIndex(index) {
+          this.hoverIndex = index;
+        },
+        clearHoverIndex() {
+          this.hoverIndex = null;
+        }
+      },
+      mounted() {
+        AOS.init();
+        AOS.refresh();
+      },
+      beforeDestroy() {
+        AOS.refresh();
+      }
+    });
+  });
+</script>
+
+
+<!-- Enquiry Modal -->
+<div class="modal fade" id="enquiryModal" tabindex="-1" aria-labelledby="enquiryModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="enquiryModalLabel">Enquire About: {{ selectedPlot ? selectedPlot.title : '' }}</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form v-if="!formSubmitted" @submit.prevent="submitEnquiry" action="https://formspree.io/f/yourFormID" method="POST">
+          <input type="hidden" name="Plot Title" :value="selectedPlot?.title" />
+          <div class="mb-3">
+            <label for="name" class="form-label">Full Name</label>
+            <input type="text" id="name" name="name" v-model="customer.name" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" name="email" v-model="customer.email" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="phone" class="form-label">Phone Number</label>
+            <input type="text" id="phone" name="phone" v-model="customer.phone" class="form-control" required />
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Submit Enquiry</button>
+        </form>
+
+        <div v-else class="text-center mt-4">
+          <div class="checkmark">
+            <svg class="tick-icon" viewBox="0 0 52 52">
+              <path d="M14 27l7 7 17-17" fill="none" stroke="#28a745" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <p class="mt-3 text-success">Your enquiry has been submitted!</p>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+  <a href="https://wa.me/918056128920" target="_blank" rel="noopener noreferrer" class="floating-whatsapp" aria-label="Chat on WhatsApp">
+    <i class="bi bi-whatsapp"></i>
+  </a>
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init();
-
-  //   const phrases = [
-  //   "Buy Plots with Confidence.",
-  //   "Locations that Matter.",
-  //   "Your Investment, Our Priority."
-  // ];
-  // let i = 0, j = 0, currentPhrase = [], isDeleting = false;
-
-  // function typeLoop() {
-  //   const textEl = document.querySelector('.typing-text');
-  //   if (!textEl) return;
-
-  //   textEl.innerHTML = currentPhrase.join('');
-
-  //   if (!isDeleting && j <= phrases[i].length) {
-  //     currentPhrase.push(phrases[i][j]);
-  //     j++;
-  //   }
-
-  //   if (isDeleting && j > 0) {
-  //     currentPhrase.pop();
-  //     j--;
-  //   }
-
-  //   if (j === phrases[i].length) {
-  //     isDeleting = true;
-  //     setTimeout(typeLoop, 1500);
-  //     return;
-  //   }
-
-  //   if (j === 0 && isDeleting) {
-  //     isDeleting = false;
-  //     i = (i + 1) % phrases.length;
-  //   }
-
-  //   setTimeout(typeLoop, isDeleting ? 40 : 100);
-  // }
-
-  // document.addEventListener('DOMContentLoaded', typeLoop);
-  </script>
-  <script src="js/app.js"></script>
 </body>
 </html>
