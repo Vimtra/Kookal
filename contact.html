@@ -206,12 +206,15 @@
         <!-- Contact Form (left) -->
         <div class="contact-form" data-aos="fade-right">
           <h2 class="mb-4">Get in Touch</h2>
-  <form id="contactForm" action="https://script.google.com/macros/s/AKfycbw3Tl8eZy7HH2h4C0bHqX8YaRVCFeacRFNBLaIwCRT7y-gxY7UCCK3Pzbmb20oM3mURtQ/exec" method="POST">
+  <form id="contactForm" action="https://script.google.com/macros/s/AKfycbyK5M8BfKgWasnW017CH27VP7zEKS0RP6yyoM_t4PtGFnuN5BiHo2Ugud2HFj2Z5-pIOw/exec" method="POST">
     <div class="mb-3"><input type="text" name="name" class="form-control" placeholder="Your Name" required /></div>
     <div class="mb-3"><input type="email" name="email" class="form-control" placeholder="Your Email" required /></div>
     <div class="mb-3"><input type="tel" name="phone" class="form-control" placeholder="Your Number" required /></div>
     <div class="mb-3"><textarea name="message" class="form-control" rows="5" placeholder="Your Message" required></textarea></div>
-    <button type="submit" class="btn btn-success w-100">Send Message</button>
+    <button type="submit" class="btn btn-success w-100" id="submitButton">
+  <span id="buttonText">Send Message</span>
+  <span class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true" id="loadingSpinner"></span>
+</button>
     <div id="formStatus" class="mt-3"></div>
   </form>
 
@@ -277,12 +280,20 @@
   AOS.init();
   const form = document.getElementById('contactForm');
   const formStatus = document.getElementById('formStatus');
+  const submitButton = document.getElementById('submitButton');
+  const buttonText = document.getElementById('buttonText');
+  const loadingSpinner = document.getElementById('loadingSpinner');
 
   form.addEventListener('submit', async function (e) {
-    e.preventDefault(); // Prevent the default form submission
+    e.preventDefault();
 
     const formData = new FormData(form);
     const formUrl = form.action;
+
+    // Show loading state
+    buttonText.textContent = 'Submitting...';
+    loadingSpinner.classList.remove('d-none');
+    submitButton.disabled = true;
 
     try {
       const response = await fetch(formUrl, {
@@ -290,7 +301,6 @@
         body: formData
       });
 
-      // Check if the response is successful
       if (response.ok) {
         formStatus.innerHTML = '<div class="alert alert-success">Thank you! Your message has been sent successfully.</div>';
         form.reset();
@@ -300,11 +310,13 @@
     } catch (error) {
       console.error('Error submitting form:', error);
       formStatus.innerHTML = '<div class="alert alert-danger">Network error. Please check your connection and try again.</div>';
+    } finally {
+      // Hide loading state
+      buttonText.textContent = 'Send Message';
+      loadingSpinner.classList.add('d-none');
+      submitButton.disabled = false;
     }
   });
-
-  // The previous message listener is no longer needed with this approach.
-  // window.addEventListener("message", function(event) { ... });
 </script>
 </body>
 </html>
